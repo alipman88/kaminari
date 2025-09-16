@@ -207,7 +207,7 @@ module Kaminari
                        collection.entry_name(count: page_size).downcase
                      end
 
-        if collection.total_pages < 2
+        if collection.total_count > collection.limit_value
           t('helpers.page_entries_info.one_page.display_entries', entry_name: entry_name, count: collection.total_count)
         else
           from = collection.offset_value + 1
