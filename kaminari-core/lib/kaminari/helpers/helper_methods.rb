@@ -199,6 +199,7 @@ module Kaminari
       #   <%= page_entries_info @posts, entry_name: 'item' %>
       #   #-> Displaying items 6 - 10 of 26 in total
       def page_entries_info(collection, entry_name: nil)
+        raise 'oh snap'
         records = collection.respond_to?(:records) ? collection.records : collection.to_a
         page_size = records.size
         entry_name = if entry_name
